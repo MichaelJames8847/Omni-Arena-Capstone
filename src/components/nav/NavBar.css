@@ -1,0 +1,38 @@
+/* Container for the Navbar */
+.navbar-container {
+    border: 2px solid #8B0000; /* Blood red border */
+    background-color: #1C1C1C; /* Dark background color */
+    padding: 1rem;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    color: #fff; /* Text color for the navbar items */
+}
+
+.navbar__item {
+    flex-basis: 20%;
+    list-style-type: none;
+}
+
+.navbar__logout {
+    margin-left: auto;
+}
+
+/* Styling for the Links inside the Navbar */
+.navbar__item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0.5rem 1rem;
+    /* Add more styling here like text-shadow, hover effects, etc. */
+}
+
+/* Hover effect for the Links */
+.navbar__item a:hover {
+    background-color: #8B0000; /* Blood red background color on hover */
+    text-decoration: underline; /* Underline the link on hover */
+}
