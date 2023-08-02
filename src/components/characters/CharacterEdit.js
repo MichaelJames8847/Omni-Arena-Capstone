@@ -4,6 +4,7 @@
 
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import "./CharacterEdit.css"
 
 export const CharacterEdit = () => {
     const [characters, setCharacters] = useState([])
@@ -71,7 +72,7 @@ export const CharacterEdit = () => {
     }
 
     return (
-        <form className="characterForm">
+        <form className="characterEditForm">
             <h2 className="characterForm_title">Characters</h2>
             <div className="form_group">
                 <label htmlFor="characterSelect">Select a Character:</label>
@@ -99,6 +100,7 @@ export const CharacterEdit = () => {
                                 />
                         </div>
                     </fieldset>
+                    <img src={character.bioPic} className="characterPortrait" />
                     <fieldset>
                         <div className="form-group">
                             <label htmlFor="info">Character Info:</label>

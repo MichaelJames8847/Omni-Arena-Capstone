@@ -38,7 +38,7 @@ export const HomeViews = () => {
                 <main className="content">
                   <section className="mainContent">
                     <h1>Omni-Arena</h1>
-                    <div>Fight to determine who's the strongest in all the universes!</div>
+                    <div className="contentInfo">Fight to determine who's the strongest in all the universes!</div>
     
                     <section className="aboutBox">
                       <h2>Welcome to Omni-Arena!</h2>
@@ -65,14 +65,18 @@ export const HomeViews = () => {
                     </footer>
                   </section>
     
-                  <aside className="rotatingList">
-                    <h2>Rotating Characters</h2>
+                  <aside className="rotatingSection">
+                    <h2>Featured Characters</h2>
+                    <div className="rotatingList">
                    {currentCharacter && (
                     <Link to={`/characters?${currentCharacter.id}`}>
+                      <div className="characterContainer">
                         <img src={currentCharacter.bioPic} alt={currentCharacter.name} />
                         <span>{currentCharacter.name}</span>
+                        </div>
                     </Link>
                    )}
+                   </div>
                   </aside>
                 </main>
                 <Outlet />

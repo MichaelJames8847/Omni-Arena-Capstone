@@ -6,6 +6,7 @@
 
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./CharacterForm.css"
 
 
 export const CharacterForm = () => {
@@ -15,10 +16,10 @@ export const CharacterForm = () => {
     useEffect( // fetch universes state 
         () => {
             fetch(`http://localhost:8088/universes`)
-            .then(res => res.json())
-            .then((universeArray) => {
-                setUniverses(universeArray)
-            })
+                .then(res => res.json())
+                .then((universeArray) => {
+                    setUniverses(universeArray)
+                })
         },
         [] // initial universe state
     )
@@ -73,6 +74,14 @@ export const CharacterForm = () => {
             })
     }
 
+    function truncateDescription(description, maxLength) {
+        if (description.length > maxLength) {
+          return description.slice(0, maxLength) + '...';
+        }
+        return description;
+      }
+      
+
     // JSX rendering 
     return (
         <form className="characterForm">
@@ -83,7 +92,7 @@ export const CharacterForm = () => {
                     <input
                         required autoFocus
                         type="text"
-                        style={{ height: "1rem", width: "15rem"}}
+                        style={{ height: "1rem", width: "15rem" }}
                         className="form-control"
                         placeholder="Input new character name"
                         value={character.name}
@@ -101,7 +110,7 @@ export const CharacterForm = () => {
                     <label htmlFor="bioPic">Character Portrait:</label>
                     <input
                         type="url"
-                        style={{ width: "25rem"}}
+                        style={{ width: "25rem" }}
                         id="bioPic"
                         value={character.bioPic}
                         onChange={
@@ -119,7 +128,7 @@ export const CharacterForm = () => {
                     <input
                         required autoFocus
                         type="text"
-                        style={{ height: "7rem", width: "25rem"}}
+                        style={{ height: "7rem", width: "25rem" }}
                         className="form-control"
                         placeholder="Give a brief description of the new character"
                         value={character.info}
@@ -168,8 +177,8 @@ export const CharacterForm = () => {
                     >
                         <option value="0">Select an option</option>
                         {characters.map((character) => (
-                            <option key={character.powerSet.id} value={character.powerSet.id}>
-                                {character.powerSet.description}
+                            <option key={character.powerSet.id} value={character.powerSet.id} title={character.powerSet.description}>
+                                {truncateDescription(character.powerSet.description, 60)}
                             </option>
                         ))}
                     </select>
@@ -178,7 +187,7 @@ export const CharacterForm = () => {
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">
-                    Submit Custom Character
+                Submit Custom Character
             </button>
         </form>
     )

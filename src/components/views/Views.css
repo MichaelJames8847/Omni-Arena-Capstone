@@ -2,25 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
 
-/* Global Styles */
-body {
-  font-family: 'Bangers', cursive;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c8222420-46bd-4633-bece-bcdd52598a29/da7dkix-0161beaa-4663-4b74-9d23-b404a6df797f.png/v1/fill/w_899,h_600,q_80,strp/anime_vs_marvel_and_dc_by_regnoart_da7dkix-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjAwIiwicGF0aCI6IlwvZlwvYzgyMjI0MjAtNDZiZC00NjMzLWJlY2UtYmNkZDUyNTk4YTI5XC9kYTdka2l4LTAxNjFiZWFhLTQ2NjMtNGI3NC05ZDIzLWI0MDRhNmRmNzk3Zi5wbmciLCJ3aWR0aCI6Ijw9ODk5In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.Pbsq7jYjbze8OxmbyMCGOoVlTHZp7VhjK2gN-v9lHkE");
-  background-size: cover;
-  background-position: center;
+.content{
+  background-image: url("https://2.blogs.elcomercio.pe/kamehouse/wp-content/uploads/sites/282/2015/10/maxresdefault31.jpg");
 }
-
-/* Container Styles */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  position: relative;
-}
-
 /* Header Styles */
 h1 {
   font-size: 60px;
@@ -39,10 +23,20 @@ h1 {
   z-index: 1; /* Ensures the content appears in front of the background */
 }
 
+.contentInfo {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  font-style: italic;
+  font-family: 'Orbitron', sans-serif;
+  text-decoration: underline;
+  color: white;
+}
+
 .aboutBox h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 36px;
-  color: #333;
+  color: white;
   margin-top: 0;
 }
 
@@ -54,6 +48,13 @@ h1 {
 
 .aboutBox .features__header {
   margin-top: 20px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  font-style: italic;
+  text-decoration: underline;
 }
 
 .aboutBox ol {
@@ -101,51 +102,46 @@ main.content > section.mainContent {
   box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
-aside.rotatingList {
-  flex-basis: 300px; /* Set a fixed width for the aside */
-  min-width: 300px; /* Ensure the aside has a minimum width */
-}
-
-.rotatingList h2 {
-  font-size: 24px;
-  color: #fff;
-}
-
-.rotatingList ul {
-  list-style: none;
-  padding: 0;
-}
-
-.rotatingList li {
+/* CSS for the aside bar */
+.rotatingList {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  text-align: center; /* Center text */
+  align-items: center;
+  margin-top: 20px;
 }
 
-.rotatingList li img {
-  width: 100px; /* Set the width and height to desired size */
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover; /* Show the entire picture without distortion */
-  object-position: center; /* Center the picture within the container */
+.rotatingSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.characterContainer {
+  position: relative; /* Set the container to relative positioning */
+  width: 400px; /* Set the desired width for the container */
+  height: 425px; /* Set the desired height for the container (adjust as needed) */
+  margin-bottom: 10px; /* Add some space between each character */
 }
 
-.rotatingList li span {
+/* Style for the character image */
+.characterContainer img {
+  width: 100%;
+  height: 700px; /* Set the desired height for the images (adjust as needed) */
+  object-fit: cover;
+}
+
+/* Style for the character name */
+.characterContainer span {
+  position: absolute; /* Position the character name absolutely on top of the image */
+  top: -30px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Add a background color for better visibility */
+  color: #fff; /* Set the text color */
   font-size: 16px;
-  color: #fff; /* Change the text color to white */
-  font-weight: bold; /* Make the displayed name bold */
-  margin-bottom: 0.5rem; /* Add some space between name and bioPic */
-}
-
-.rotatingList li.active {
-  background-color: #007bff;
-  color: #fff;
+  font-weight: bold;
+  padding: 5px; /* Add some padding to the character name for better appearance */
+  box-sizing: border-box; /* Include padding in the width */
+  margin-bottom: 5px;
 }
 
 

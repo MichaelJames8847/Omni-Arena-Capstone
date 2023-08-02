@@ -1,0 +1,123 @@
+/* Styles for the character-select container */
+.character-select {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://w0.peakpx.com/wallpaper/884/979/HD-wallpaper-batman-vs-darth-vader-batman-darth-vader-star-wars-superheroes-artwork-artist.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Styles for the h2 heading */
+  .character-select h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for the select dropdown */
+  .character-select select {
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+  }
+  
+  /* Styles for the select dropdown options */
+  .character-select select option {
+    background-color: #444;
+  }
+  
+  /* Styles for the buttons */
+  .character-select button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Styles for the disabled button */
+  .character-select button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+/* Styles for the winner container */
+.character-select .winner-container {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #272727;
+    border: 2px solid #ffbe00;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Set the width to span 90% of the page */
+    max-width: 600px; /* Set a maximum width to avoid overstretching on large screens */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  
+  /* Styles for the winner image */
+  .character-select .winner-container img {
+    max-width: 100%; /* Increase the width of the winner's image */
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    border: 4px solid #ffbe00;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Increase the margin to add more spacing */
+  }
+  
+  /* Styles for the winner name */
+  .character-select .winner-container p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px; /* Increase the margin to add more spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Styles for the powers list */
+  .character-select .winner-container ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  /* Styles for the powers list items */
+  .character-select .winner-container li {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Styles for the power level */
+  .character-select .winner-container h3 {
+    font-size: 20px;
+    margin-top: 15px;
+    color: #ffbe00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Styles for the "Winner" heading */
+  .character-select .winner-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffbe00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  
