@@ -46,11 +46,12 @@ fieldset {
     text-align: left;
     border: 2px solid red;
     background-color: black;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .form--login > fieldset > input[type="userName"] {
     width: 25em;
+    max-height: 5%;
 }
 
 .label--login {
@@ -77,7 +78,11 @@ fieldset {
 
 .container--login {
     text-align: center;
-}
+    background-image: url("https://i0.wp.com/thefutureoftheforce.com/wp-content/uploads/2019/05/star-wars-v-avengers.jpg?fit=942%2C532&ssl=1");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}   
 
 .button--close {
     position: relative;

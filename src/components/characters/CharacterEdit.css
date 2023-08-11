@@ -6,6 +6,9 @@
     padding: 20px;
     font-family: "Arial", sans-serif;
     color: #fff;
+    background-image: url("https://images.hdqwalls.com/wallpapers/thor-vs-kratos-art-tg.jpg");
+    background-size: cover;
+    min-height: 100vh;
   }
   
   /* Styling for the title */

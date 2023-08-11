@@ -85,5 +85,5 @@ export const HomeViews = () => {
           />
           <Route path="/characters/:characterId" element={<CharacterDetails />} />
         </Routes>
-      );
-    };
+      )
+    }

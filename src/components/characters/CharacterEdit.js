@@ -56,7 +56,7 @@ export const CharacterEdit = () => {
 
             .then(res => res.json())
             .then(() => {
-                navigate("/characters")
+                navigate(`/characters/${selectedCharacterId}`)
             })
     }
 

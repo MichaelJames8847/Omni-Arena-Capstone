@@ -49,5 +49,5 @@ export const CharacterDetails = () => {
             </div>
           </div>
         </section>
-      );
+      )
 }

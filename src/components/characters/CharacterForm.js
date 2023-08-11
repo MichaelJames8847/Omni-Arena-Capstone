@@ -12,6 +12,7 @@ import "./CharacterForm.css"
 export const CharacterForm = () => {
     const [characters, setCharacters] = useState([])
     const [universes, setUniverses] = useState([])
+    const [powerSets, setPowerSets] = useState([])
 
     useEffect( // fetch universes state 
         () => {
@@ -31,6 +32,17 @@ export const CharacterForm = () => {
                 .then((characterArray) => {
                     setCharacters(characterArray)
                 })
+        },
+        []
+    )
+
+    useEffect(
+        () => {
+            fetch(`http://localhost:8088/powerSets`)
+            .then(res => res.json())
+            .then((powerSetArray) => {
+                setPowerSets(powerSetArray)
+            })
         },
         []
     )
@@ -176,9 +188,9 @@ export const CharacterForm = () => {
                         }}
                     >
                         <option value="0">Select an option</option>
-                        {characters.map((character) => (
-                            <option key={character.powerSet.id} value={character.powerSet.id} title={character.powerSet.description}>
-                                {truncateDescription(character.powerSet.description, 60)}
+                        {powerSets.map((powerSet) => (
+                            <option key={powerSet.id} value={powerSet.id} title={powerSet.description}>
+                                {truncateDescription(powerSet.description, 60)}
                             </option>
                         ))}
                     </select>

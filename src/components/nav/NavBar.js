@@ -13,13 +13,13 @@ export const NavBar = () => {
                 <Link className="navbar__link" to="/">Home</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/characterSelection">Choose your Combatants</Link>
+                <Link className="navbar__link" to="/characterSelection">Choose your Fighters</Link>
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/characters/:characterId/edit">Update a Character</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/characters/create">Create Custom Character</Link>
+                <Link className="navbar__link" to="/characters/create">Add New Character</Link>
             </li>
             {
                 localStorage.getItem("omni_user")

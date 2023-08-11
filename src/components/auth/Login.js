@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import "./Login.css"
 
 export const Login = () => {
-    const [userName, set] = useState("IllumiGregi")
+    const [userName, set] = useState("")
     const navigate = useNavigate()
 
     const handleLogin = (u) => {
