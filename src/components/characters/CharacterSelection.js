@@ -8,6 +8,8 @@ export const BattlePage = () => {
     const [character2, setCharacter2] = useState(null)
     // state to store the winner of the battle 
     const [winner, setWinner] = useState(null)
+    const [animationInProgress, setAnimationInProgress] = useState(false)
+    const [showModal, setShowModal] = useState(false)
 
     useEffect( // fetch characters with universe and powerset expanded
         () => {
@@ -41,20 +43,27 @@ export const BattlePage = () => {
     // event handler to determine winner of battle 
     const handleBeginBattle = () => {
         if (character1 && character2) {
+            setAnimationInProgress(true)
+            setShowModal(true)
 
-            // variables for storing selected character powerLevels
-            const powerLevelCharacter1 = character1.powerSet.powerLevel
-            const powerLevelCharacter2 = character2.powerSet.powerLevel
+            setTimeout(() => {
+                // variables for storing selected character powerLevels
+                const powerLevelCharacter1 = character1.powerSet.powerLevel
+                const powerLevelCharacter2 = character2.powerSet.powerLevel
 
-            // variable for winning character, value is if character 1 powerLevel is higher than character2's
-            const winningCharacter = powerLevelCharacter1 > powerLevelCharacter2
-                // if returns true, character1 is the winner
-                ? character1
-                // if false, character2 is the winner
-                : character2;
+                // // variable for winning character, value is if character 1 powerLevel is higher than character2's
+                const winningCharacter =
+                    powerLevelCharacter1 > powerLevelCharacter2
 
-            //function for storing winning character
-            setWinner(winningCharacter)
+                        ? character1
+                        : character2
+
+                setWinner(winningCharacter)
+                setTimeout(() => {
+                    setShowModal(false)
+                    setAnimationInProgress(false)
+                }, 1000)
+            }, 5000)
         }
     }
 
@@ -77,25 +86,41 @@ export const BattlePage = () => {
                     </option>
                 ))}
             </select>
-            <button className="button" onClick={handleBeginBattle} disabled={!character1 || !character2}>
+            <button className="button" onClick={handleBeginBattle} disabled={!character1 || !character2 || animationInProgress}>
                 Begin Battle
             </button>
-            {winner && (
-                <div className="winner-container">
-                    <div className="winner">
-                        <h2>Winner</h2>
-                        <img src={winner.bioPic} alt={winner.bioPic} />
-                        <p>{winner.name}</p>
-                        <p>Power Level: {winner.powerSet.powerLevel} </p>
-                        <h3>Powers:</h3>
-                        <ul>
-                            {winner.powerSet.powers.map((power, index) => (
-                                <li key={index}>{power}</li>
-                            ))}
-                        </ul>
+            {showModal && (
+                <div className="modal-overlay">
+                    <div className="modal">
+                        <div className="modal-content">
+                            <p className="determining-text">Determining winner...</p>
+                            <img
+                                src="https://media.tenor.com/ukiEmBba_F8AAAAd/superman-vs-goku.gif"
+                                alt="Fight animation"
+                                className="fighting-gif"
+                            />
+                        </div>
                     </div>
                 </div>
             )}
+            {!showModal &&
+                winner && (
+                    <div className="winner-container">
+                        <div className="winner">
+                            <h2>Winner</h2>
+                            <img src={winner.bioPic} alt={winner.bioPic} />
+                            <p>{winner.name}</p>
+                            <p>Power Level: {winner.powerSet.powerLevel} </p>
+                            <h3>Powers:</h3>
+                            <ul>
+                                {winner.powerSet.powers.map((power, index) => (
+                                    <li key={index}>{power}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                )
+            }
         </div>
     )
 }

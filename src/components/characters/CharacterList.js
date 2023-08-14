@@ -78,11 +78,13 @@ export const CharacterList = () => {
                             <Link to={`/characters/${character.id}`}>
                             <header>{character.name}</header>
                             </Link>
+                            <div className="delete-button">
                             {character.isUserCreated && (
                                 <button onClick={() => handleDeleteCharacter(character.id)}>
                                     Delete Custom Character
                                 </button>
                             )}
+                            </div>
                         </section>
                     ))}
                 </div>

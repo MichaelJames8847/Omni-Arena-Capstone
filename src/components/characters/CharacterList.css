@@ -48,6 +48,25 @@
     font-size: 18px;
     color: #fff;
   }
+
+  .character .delete-button {
+    display: flex;
+    align-items: center;
+  }
+
+  .character .delete-button button {
+    padding: 5px 10px;
+    background-color: #8B0000; /* Blood red background for the button */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .character .delete-button button:hover {
+    background-color: #FF0000; /* Bright red background on hover */
+  }
   
   /* Styling for the delete button */
   .character button {
